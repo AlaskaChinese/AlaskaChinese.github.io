@@ -50,3 +50,10 @@
 :root[data-theme=dark] .cutout-visual img{filter:drop-shadow(0 30px 32px rgba(0,0,0,.4))}
 :root[data-theme=light]{color-scheme:light}
 button.lang{font:inherit;text-transform:inherit;color:inherit;background:none;cursor:pointer}
+/* Cursor light: soft sheen trailing the pointer; overlay blend adapts to the active theme. */
+.cursor-glow{position:fixed;left:0;top:0;width:520px;height:520px;margin:-260px 0 0 -260px;border-radius:50%;pointer-events:none;z-index:150;mix-blend-mode:screen;background:radial-gradient(closest-side,rgba(255,255,255,.45),rgba(255,255,255,.14) 48%,transparent 75%);opacity:0;transition:opacity .45s ease;will-change:transform}
+.cursor-glow.on{opacity:1}
+@media(pointer:coarse),(prefers-reduced-motion:reduce){.cursor-glow{display:none}}
+/* Theme switch: a light disc expands from the toggle, covers the page, then dissolves into the new theme. */
+.theme-wave{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:300}
+.theme-wave i{position:absolute;border-radius:50%;will-change:transform}
