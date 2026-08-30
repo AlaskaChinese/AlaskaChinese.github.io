@@ -29,15 +29,24 @@
   #l01 .render-card,#d01 .render-card,#l01 .render-card.large,#d01 .render-card.large{flex:0 0 84vw;grid-column:auto;border:1px solid currentColor;scroll-snap-align:start;scroll-snap-stop:always}
 }
 
-/* Dark mode: follows system preference. */
+/* Dark mode: auto follows system; a manual choice overrides via [data-theme]. */
 @media(prefers-color-scheme:dark){
-:root{--paper:#131311;--paper2:#1b1b18;--ink:#e9e7df;--muted:#9a9b92;--dark:#1a1a17;--line:rgba(236,235,228,.16)}
-.product.light{background:#1c1c19}
-.product.light .render-card{background:#1c1c19}
-.philosophy{background:#22221e}
-.hero-copy p{color:#a6a79d}
-.principle p{color:#a8a9a0}
-.contact{--ink:#11120f;color:var(--ink)}
-.object-index a:hover{color:#11120f}
-.cutout-visual img{filter:drop-shadow(0 30px 32px rgba(0,0,0,.4))}
+:root:not([data-theme=light]){color-scheme:dark;--paper:#131311;--paper2:#1b1b18;--ink:#e9e7df;--muted:#9a9b92;--dark:#1a1a17;--line:rgba(236,235,228,.16)}
+:root:not([data-theme=light]) .product.light,:root:not([data-theme=light]) .product.light .render-card{background:#1c1c19}
+:root:not([data-theme=light]) .philosophy{background:#22221e}
+:root:not([data-theme=light]) .hero-copy p{color:#a6a79d}
+:root:not([data-theme=light]) .principle p{color:#a8a9a0}
+:root:not([data-theme=light]) .contact{--ink:#11120f;color:var(--ink)}
+:root:not([data-theme=light]) .object-index a:hover{color:#11120f}
+:root:not([data-theme=light]) .cutout-visual img{filter:drop-shadow(0 30px 32px rgba(0,0,0,.4))}
 }
+:root[data-theme=dark]{color-scheme:dark;--paper:#131311;--paper2:#1b1b18;--ink:#e9e7df;--muted:#9a9b92;--dark:#1a1a17;--line:rgba(236,235,228,.16)}
+:root[data-theme=dark] .product.light,:root[data-theme=dark] .product.light .render-card{background:#1c1c19}
+:root[data-theme=dark] .philosophy{background:#22221e}
+:root[data-theme=dark] .hero-copy p{color:#a6a79d}
+:root[data-theme=dark] .principle p{color:#a8a9a0}
+:root[data-theme=dark] .contact{--ink:#11120f;color:var(--ink)}
+:root[data-theme=dark] .object-index a:hover{color:#11120f}
+:root[data-theme=dark] .cutout-visual img{filter:drop-shadow(0 30px 32px rgba(0,0,0,.4))}
+:root[data-theme=light]{color-scheme:light}
+button.lang{font:inherit;text-transform:inherit;color:inherit;background:none;cursor:pointer}
