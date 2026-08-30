@@ -4,3 +4,27 @@
 
 @media(max-width:900px){.object-index{grid-template-columns:1fr;padding-top:30px;padding-bottom:30px}.object-index a{margin:0 0 -1px}.render-gallery{grid-template-columns:repeat(2,1fr)}.render-card.large{grid-column:span 2}.software-facts{grid-template-columns:1fr 1fr}.software-facts>div{border-bottom:1px solid currentColor}.software-facts>div:nth-child(2){border-right:0}.software-facts>div:nth-child(3){padding-left:0}.software-facts>div:nth-last-child(-n+2){border-bottom:0}}
 @media(max-width:600px){.object-index{padding-left:5vw;padding-right:5vw}.render-gallery,.render-gallery.editorial{grid-template-columns:1fr;margin-left:-5vw;margin-right:-5vw}.render-card.large{grid-column:span 1}.software-facts{grid-template-columns:1fr}.software-facts>div,.software-facts>div+div,.software-facts>div:nth-child(3){padding:22px 0;border-right:0;border-bottom:1px solid currentColor}.software-facts>div:last-child{border-bottom:0}.software h2{font-size:clamp(48px,14vw,76px)}}
+
+/* Product imagery modes: hardware floats as an alpha cutout; software stays framed. */
+.cutout-visual{background:transparent;isolation:isolate}
+.cutout-visual img{object-fit:contain!important;object-position:center;background:transparent;filter:drop-shadow(0 28px 28px rgba(17,18,15,.13))}
+.product.dark .cutout-visual img{filter:drop-shadow(0 30px 32px rgba(0,0,0,.38))}
+.framed-visual{aspect-ratio:16/10;height:auto;padding:10px;background:#151612;border:1px solid rgba(236,235,228,.28);box-shadow:0 24px 60px rgba(0,0,0,.28);overflow:hidden}
+.software .framed-visual img{width:100%;height:100%!important;aspect-ratio:16/10;object-fit:contain!important;object-position:center;background:#151612}
+.software h2{font-size:clamp(40px,4vw,64px)}
+.software h2>span{display:block}
+.software h2 .phrase{white-space:nowrap;font-size:.78em;letter-spacing:-.06em}
+.concept-note{margin:18px 0 0;font-family:"SFMono-Regular",Consolas,monospace;font-size:9px;line-height:1.6;text-transform:uppercase;letter-spacing:.02em;opacity:.5}
+.render-gallery.editorial .render-card img{aspect-ratio:16/10;object-fit:contain;background:#151612}
+.render-card figcaption b{line-height:1.4}
+
+@media(max-width:600px){
+  .hero-art.cutout-visual img{height:390px}
+  .cutout-visual{margin:18px 0}
+  .framed-visual{margin:28px 0;padding:5px}
+  .software h2{font-size:clamp(38px,10.3vw,48px)}
+  .software h2 .phrase{font-size:.76em}
+  #l01 .render-gallery,#d01 .render-gallery{display:flex;grid-template-columns:none;gap:12px;margin-left:-5vw;margin-right:-5vw;padding:0 5vw 14px;background:transparent;border:0;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x mandatory;scroll-padding-inline:5vw;scrollbar-width:none}
+  #l01 .render-gallery::-webkit-scrollbar,#d01 .render-gallery::-webkit-scrollbar{display:none}
+  #l01 .render-card,#d01 .render-card,#l01 .render-card.large,#d01 .render-card.large{flex:0 0 84vw;grid-column:auto;border:1px solid currentColor;scroll-snap-align:start;scroll-snap-stop:always}
+}
