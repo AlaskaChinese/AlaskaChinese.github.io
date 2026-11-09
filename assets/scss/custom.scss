@@ -390,6 +390,25 @@
     }
   }
 
+// 友情链接卡片与图标自适应（支持长条形/正方形图标完整显示，不裁剪）
+.article-list--compact.links article {
+    .article-image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+
+        img {
+            width: auto !important;
+            height: auto !important;
+            max-width: 96px !important;
+            max-height: 46px !important;
+            object-fit: contain !important;
+            border-radius: 4px;
+        }
+    }
+}
+
 
 
 /*主页布局间距调整*/

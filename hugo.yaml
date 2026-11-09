@@ -119,10 +119,18 @@ menu:
       params:
         icon: brand-github
 
+    - identifier: email
+      name: Email (alaskachinese@foxmail.com)
+      url: mailto:alaskachinese@foxmail.com
+      weight: 2
+      params:
+        icon: email
+        newTab: false
+
     - identifier: rss
       name: RSS
       url: /index.xml
-      weight: 2
+      weight: 3
       params:
         icon: rss
 
