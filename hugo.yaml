@@ -1,0 +1,166 @@
+baseurl: https://alaskachinese.github.io
+locale: zh
+theme: hugo-theme-stack
+title: AlaskaChinese's Blog
+copyright: AlaskaChinese's Blog
+
+DefaultContentLanguage: zh
+hasCJKLanguage: true
+
+languages:
+  zh:
+    label: 简体中文
+    title: AlaskaChinese's Blog
+    weight: 1
+
+services:
+  disqus:
+    shortname: ""
+  googleAnalytics:
+    id: ""
+
+pagination:
+  pagerSize: 6
+
+permalinks:
+  post: /p/:slug/
+  page: /:slug/
+
+params:
+  mainSections:
+    - post
+  rssFullContent: true
+  favicon: img/favicon.ico
+
+  footer:
+    since: 2026
+    customText: 🤝 本博客仅用于记录个人学习、系统美化与技术成长。欢迎交流探讨！
+
+  dateFormat:
+    published: 2006-01-02
+    lastUpdated: 2006-01-02 15:04
+
+  sidebar:
+    compact: false
+    emoji:
+    subtitle1: 知是行之始
+    subtitle2: 行是知之成
+    avatar: img/avatar.png
+
+  article:
+    math: false
+    toc: true
+    readingTime: true
+    license:
+      enabled: true
+      default: 根据 CC BY-NC-SA 4.0 协议授权，转载请注明出处🔔
+
+  comments:
+    enabled: true
+    provider: giscus
+    giscus:
+      repo: AlaskaChinese/AlaskaChinese.github.io
+      category: General
+      mapping: pathname
+      strict: 0
+      lightTheme: light
+      darkTheme: dark_dimmed
+      reactionsEnabled: 1
+      emitMetadata: 0
+      inputPosition: top
+      lang: zh-CN
+      loading: lazy
+
+  widgets:
+    homepage:
+      - type: search
+      - type: archives
+        params:
+          limit: 5
+      - type: categories
+        params:
+          limit: 10
+      - type: tag-cloud
+        params:
+          limit: 10
+    page:
+      - type: toc
+
+  opengraph:
+    twitter:
+      card: summary_large_image
+
+  colorScheme:
+    toggle: true
+    default: auto
+
+  imageProcessing:
+    thumbnail:
+      enabled: true
+    content:
+      enabled: false
+
+menu:
+  main: []
+
+  social:
+    - identifier: github
+      name: AlaskaChinese's GitHub
+      url: https://github.com/AlaskaChinese
+      weight: 1
+      params:
+        icon: brand-github
+
+    - identifier: rss
+      name: RSS
+      url: /index.xml
+      weight: 2
+      params:
+        icon: rss
+
+related:
+  includeNewer: true
+  threshold: 60
+  toLower: false
+  indices:
+    - name: tags
+      weight: 100
+    - name: categories
+      weight: 200
+
+markup:
+  goldmark:
+    extensions:
+      passthrough:
+        enable: true
+        delimiters:
+          block:
+            - - \[
+              - \]
+            - - $$
+              - $$
+          inline:
+            - - \(
+              - \)
+    renderer:
+      unsafe: true
+  tableOfContents:
+    endLevel: 4
+    ordered: true
+    startLevel: 2
+  highlight:
+    noClasses: false
+    codeFences: true
+    guessSyntax: true
+    lineNoStart: 1
+    lineNos: true
+    lineNumbersInTable: true
+    tabWidth: 4
+
+frontmatter:
+  lastmod:
+    - :git
+    - lastmod
+    - :fileModTime
+
+enableGitInfo: true

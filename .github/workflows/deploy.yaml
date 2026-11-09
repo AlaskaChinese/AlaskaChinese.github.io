@@ -1,0 +1,66 @@
+name: deploy
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  TZ: Asia/Shanghai
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+          with:
+              submodules: true
+              fetch-depth: 0
+
+        - name: Disable quotePath
+          run: git config --global core.quotePath false
+
+        - name: Setup Python
+          uses: actions/setup-python@v5
+          with:
+              python-version: "3.12"
+
+        - name: Install Pillow
+          run: pip install Pillow
+
+        - name: Compress Images
+          run: python scripts/compress-images.py
+
+        - name: Commit Compressed Images
+          run: |
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add -A
+            if git diff --staged --quiet; then
+              echo "没有需要压缩的图片"
+            else
+              git commit -m "[compress] 自动压缩图片" || true
+              echo "compressed=true" >> $GITHUB_ENV
+            fi
+
+        - name: Setup Hugo
+          uses: peaceiris/actions-hugo@v3
+          with:
+              hugo-version: "latest"
+              extended: true
+
+        - name: Build Web
+          run: hugo -D
+
+        - name: Deploy Web
+          uses: peaceiris/actions-gh-pages@v4
+          with:
+              github_token: ${{ secrets.GITHUB_TOKEN }}
+              publish_branch: gh-pages
+              publish_dir: ./public
+              force_orphan: true
+              commit_message: auto deploy

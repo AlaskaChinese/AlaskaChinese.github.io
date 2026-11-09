@@ -1,3 +1,9 @@
+# Hugo build outputs
+public/
+resources/
+.hugo_build.lock
+
+# OS & Editor files
 .DS_Store
 Thumbs.db
 *.tmp

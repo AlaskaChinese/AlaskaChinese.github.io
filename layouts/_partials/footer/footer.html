@@ -1,0 +1,62 @@
+{{- $ThemeVersion := "4.0.3" -}}
+<footer class="site-footer">
+    <!-- 知识产权与版权声明 -->
+    <section class="copyright">
+        &copy;
+        {{ if and (.Site.Params.footer.since) (ne .Site.Params.footer.since (int (now.Format "2006"))) }}
+            {{ .Site.Params.footer.since }} -
+        {{ end }}
+        {{ now.Format "2006" }} {{ default .Site.Title .Site.Copyright }}
+    </section>
+
+    <!-- 运行时间统计：从 2026-11-09 开始精确到秒实时跳动 -->
+    <div style="margin: 0.6rem 0; font-size: 0.88rem;">
+        <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+    </div>
+    <script language="javascript">
+        var now = new Date();
+        function createtime(){
+            now.setTime(now.getTime() + 250);
+            var grt = new Date("2026/11/09 00:00:00"); // 网站诞生时间：从今天 2026-11-09 开始计时
+            var diff = Math.max(0, now - grt);
+            var days = diff / 1000 / 60 / 60 / 24;
+            var dnum = Math.floor(days);
+            var hours = diff / 1000 / 60 / 60 - (24 * dnum);
+            var hnum = Math.floor(hours);
+            if (String(hnum).length == 1) {
+                hnum = "0" + hnum;
+            }
+            var minutes = diff / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+            var mnum = Math.floor(minutes);
+            if (String(mnum).length == 1) {
+                mnum = "0" + mnum;
+            }
+            var seconds = diff / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+            var snum = Math.floor(seconds);
+            if (String(snum).length == 1) {
+                snum = "0" + snum;
+            }
+
+            var timeDateElem = document.getElementById("timeDate");
+            var timesElem = document.getElementById("times");
+            if (timeDateElem && timesElem) {
+                timeDateElem.innerHTML = `本站已稳定运行 <span style="color: #6366f1; font-weight: bold;">${dnum}</span> 天 `;
+                timeDateElem.style.color = "gray";
+                timesElem.innerHTML = `<span style="color: #6366f1; font-weight: bold;">${hnum}</span> 小时 <span style="color: #6366f1; font-weight: bold;">${mnum}</span> 分 <span style="color: #6366f1; font-weight: bold;">${snum}</span> 秒`;
+                timesElem.style.color = "gray";
+            }
+        }
+        setInterval(createtime, 250);
+        createtime();
+    </script>
+
+    <!-- 构建驱动说明：使用 Antigravity 构建 -->
+    <section class="powerby">
+        {{ with .Site.Params.footer.customText }}
+            {{ . | safeHTML }} <br/>
+        {{ end }}
+
+        <span>使用 <b><a href="https://github.com/AlaskaChinese/AlaskaChinese.github.io" target="_blank" rel="noopener">Antigravity</a></b> 强力构建</span> · 
+        <span>基于 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="{{ $ThemeVersion }}">Stack</a></b> 主题</span>
+    </section>
+</footer>
