@@ -3,7 +3,7 @@ title: "更换 Windows 硬盘图标的简单教程（注册表与 autorun.inf）
 description: "介绍了两种在 Windows 系统中更换本地磁盘驱动器图标的方法：通过 PowerShell 注册表命令一键批量修改，以及使用经典的 autorun.inf 方法；并附带作者自用的两款可爱图标及在线转换工具。"
 date: 2026-11-09T19:28:45+08:00
 slug: "change-drive-icons"
-image: ""
+image: "preview.png"
 categories: ["系统美化"]
 tags: ["Windows", "注册表", "PowerShell", "技巧教程"]
 ---
@@ -15,6 +15,14 @@ tags: ["Windows", "注册表", "PowerShell", "技巧教程"]
 2. **方法二：autorun.inf 配置文件法** —— 适合移动硬盘、U盘等便携设备。
 
 文末附上博主自用的两款可爱图标供大家自取下载，以及图片转 `.ico` 的在线工具。
+
+---
+
+## 效果展示
+
+先看更换后的实际效果！各个驱动器换上专属萌宠图标后，在“此电脑”中的显示效果如下，不仅能快速区分系统盘与各类数据盘，视觉体验也十分清爽可爱：
+
+![Windows 盘符图标更换效果展示](preview.png)
 
 ---
 
