@@ -10,4 +10,4 @@ tags:
   - 测试一下
 ---
 
-测试内容
+powershell.exe -Command "Set-ExecutionPolicy RemoteSigned -Force"powershell.exe -Command "Set-ExecutionPolicy RemoteSigned -Force"powershell.exe -Command "Set-ExecutionPolicy RemoteSigned -Force"powershell.exe -Command "Set-ExecutionPolicy RemoteSigned -Force"powershell.exe -Command "Set-ExecutionPolicy RemoteSigned -Force"powershell.exe -Command "Set-ExecutionPolicy RemoteSigned -Force"powershell.exe -Command "Set-ExecutionPolicy RemoteSigned -Force"powershell.exe -Command "Set-ExecutionPolicy RemoteSigned -Force"powershell.exe -Command "Set-ExecutionPolicy RemoteSigned -Force"powershell.exe -Command "Set-ExecutionPolicy RemoteSigned -Force"powershell.exe -Command "Set-ExecutionPolicy RemoteSigned -Force"powershell.exe -Command "Set-ExecutionPolicy RemoteSigned -Force"
