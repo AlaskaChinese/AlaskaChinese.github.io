@@ -60,7 +60,9 @@ params:
     provider: giscus
     giscus:
       repo: AlaskaChinese/AlaskaChinese.github.io
+      repoID: R_kgDOVoCRhw
       category: General
+      categoryID: ""
       mapping: pathname
       strict: 0
       lightTheme: light
