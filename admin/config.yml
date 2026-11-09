@@ -10,6 +10,10 @@ site_url: https://alaskachinese.github.io
 display_url: https://alaskachinese.github.io
 logo_url: /img/avatar.png
 
+# 全局媒体存放目录（Decap/Sveltia CMS 必须声明）
+media_folder: "assets/img"
+public_folder: "/img"
+
 collections:
   - name: "post"
     label: "博客文章"
