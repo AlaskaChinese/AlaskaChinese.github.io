@@ -34,12 +34,12 @@ tags:
 
 ### 1. 博主自用图标直接下载
 
-博主目前使用的两款图标已打包存放在本站，点击即可直接自取下载：
+博主目前使用的两款图标已存放在本站，点击即可直接自取下载：
 
-| 图标文件 | 适用盘符 | 下载链接 |
-| :--- | :--- | :--- |
-| **daimao1.ico** | C 盘（系统盘）专用 | [点击下载 daimao1.ico](daimao1.ico) |
-| **daimao2.ico** | D \~ Z 盘（其他数据盘）专用 | [点击下载 daimao2.ico](daimao2.ico) |
+| 图标 | 下载链接 |
+| :--- | :--- |
+| ![](daimao1.png) | [点击下载 daimao1.ico](daimao1.ico) |
+| ![](daimao2.png) | [点击下载 daimao2.ico](daimao2.ico) |
 
 > 💡 **提示**：下载后，建议将图标放置在一个长期不会被误删的固定路径中，例如 `D:\alask\OneDrive\Pictures\ico\`。可以在下方的 PowerShell 脚本中将路径替换为你实际存放的位置。
 
