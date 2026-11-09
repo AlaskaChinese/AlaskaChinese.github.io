@@ -420,38 +420,12 @@
         
 
         <div class="giscus-wrapper" style="margin-top: 1.5rem;">
-    
-    <div id="giscus-helper-card" style="display: none; padding: 1.15rem 1.35rem; background: var(--card-background); border: 1.5px dashed #6366f1; border-radius: 16px; margin-bottom: 1.5rem; font-size: 0.92rem; line-height: 1.7; box-shadow: var(--shadow-sm);">
-        <div style="font-weight: 700; margin-bottom: 0.5rem; color: #6366f1; font-size: 1.05rem;">
-            💬 评论区（GitHub Discussions）一键配置指南
-        </div>
-        <p style="margin: 0 0 0.6rem 0; color: var(--card-text-color-main);">
-            若评论区提示 <code>giscus is not installed on this repository</code>，是因为该仓库尚未在 GitHub 完成 Giscus 官方应用授权。请博主进行以下两步简单操作（约 15 秒）：
-        </p>
-        <ol style="margin: 0 0 0.85rem 1.25rem; padding: 0; color: var(--card-text-color-secondary);">
-            <li style="margin-bottom: 0.35rem;">
-                <b>开启讨论区</b>：前往 <a href="https://github.com/AlaskaChinese/AlaskaChinese.github.io/settings" target="_blank" rel="noopener" style="font-weight: 600; color: #6366f1;">仓库设置页面 ↗</a>，向下滚动到 <b>Features</b> 区域，勾选 <b>Discussions</b> 并保存。
-            </li>
-            <li style="margin-bottom: 0.35rem;">
-                <b>安装 Giscus 授权应用</b>：打开 <a href="https://github.com/apps/giscus" target="_blank" rel="noopener" style="font-weight: 600; color: #6366f1;">Giscus 官方 GitHub App ↗</a>，点击绿色的 <b>Install</b> 按钮，选择 <b>Only select repositories</b> 并勾选 <code>AlaskaChinese.github.io</code> 即可！
-            </li>
-        </ol>
-        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
-            <a href="https://github.com/AlaskaChinese/AlaskaChinese.github.io/discussions" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.45rem 0.95rem; background: #6366f1; color: #fff; border-radius: 8px; font-size: 0.85rem; font-weight: 600; text-decoration: none;">
-                前往 GitHub Discussions 讨论区 ↗
-            </a>
-            <a href="https://giscus.app/zh-CN" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.45rem 0.95rem; background: var(--card-background-selected); color: var(--card-text-color-main); border: 1px solid var(--card-separator-color); border-radius: 8px; font-size: 0.85rem; font-weight: 600; text-decoration: none;">
-                Giscus 配置生成器 ↗
-            </a>
-        </div>
-    </div>
-
     <script
         src="https://giscus.app/client.js"
         data-repo="AlaskaChinese/AlaskaChinese.github.io"
         data-repo-id="R_kgDOVoCRhw"
         data-category="General"
-        data-category-id=""
+        data-category-id="DIC_kwDOVoCRh84DKuZ-"
         data-mapping="pathname"
         data-strict="0"
         data-reactions-enabled="1"
@@ -482,27 +456,10 @@
         }
 
         (function () {
-            
-            window.addEventListener("message", (e) => {
-                if (e.origin !== "https://giscus.app") return;
-                if (e.data && e.data.giscus && e.data.giscus.error) {
-                    const card = document.getElementById("giscus-helper-card");
-                    if (card) card.style.display = "block";
-                }
+            addEventListener("message", (e) => {
+                if (event.origin !== "https://giscus.app") return;
                 handler();
             });
-
-            
-            fetch('https://api.github.com/repos/AlaskaChinese\/AlaskaChinese.github.io')
-                .then(r => r.json())
-                .then(d => {
-                    if (d && d.has_discussions === false) {
-                        const card = document.getElementById("giscus-helper-card");
-                        if (card) card.style.display = "block";
-                    }
-                })
-                .catch(() => {});
-
             window.addEventListener("onColorSchemeChange", handler);
 
             function handler() {
