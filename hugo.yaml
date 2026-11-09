@@ -103,7 +103,13 @@ params:
       enabled: false
 
 menu:
-  main: []
+  main:
+    - identifier: home
+      name: 首页
+      url: /
+      weight: -100
+      params:
+        icon: home
 
   social:
     - identifier: github

@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="/rss-style.xsl"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>系统美化 on AlaskaChinese&#39;s Blog</title>
         <link>https://alaskachinese.github.io/categories/%E7%B3%BB%E7%BB%9F%E7%BE%8E%E5%8C%96/</link>

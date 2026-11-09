@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="/rss-style.xsl"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>技巧教程 on AlaskaChinese&#39;s Blog</title>
         <link>https://alaskachinese.github.io/tags/%E6%8A%80%E5%B7%A7%E6%95%99%E7%A8%8B/</link>
