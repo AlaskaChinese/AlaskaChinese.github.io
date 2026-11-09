@@ -4,12 +4,19 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 env:
   TZ: Asia/Shanghai
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   deploy:
@@ -56,7 +63,7 @@ jobs:
         - name: Build Web
           run: hugo -D
 
-        - name: Deploy Web
+        - name: Deploy to gh-pages branch
           uses: peaceiris/actions-gh-pages@v4
           with:
               github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -64,3 +71,13 @@ jobs:
               publish_dir: ./public
               force_orphan: true
               commit_message: auto deploy
+
+        - name: Upload Pages Artifact
+          uses: actions/upload-pages-artifact@v3
+          with:
+              path: ./public
+
+        - name: Deploy to GitHub Pages environment
+          id: deployment
+          uses: actions/deploy-pages@v4
+          continue-on-error: true

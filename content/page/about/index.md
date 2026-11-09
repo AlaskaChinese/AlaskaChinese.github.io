@@ -17,7 +17,7 @@ comments: true
 热衷于计算机技术、操作系统深度定制、效率工具探索与个人知识库建设。
 
 - 💻 **个人主页**：[AlaskaChinese's GitHub](https://github.com/AlaskaChinese)
-- 🚀 **博客平台**：基于 Hugo + `hugo-theme-stack`，由 **Antigravity** 强力构建，托管于 GitHub Pages。
+- 🚀 **博客平台**：基于 Hugo + `hugo-theme-stack`，托管于 GitHub Pages。
 
 ---
 

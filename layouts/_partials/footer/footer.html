@@ -50,13 +50,12 @@
         createtime();
     </script>
 
-    <!-- 构建驱动说明：使用 Antigravity 构建 -->
+    <!-- 驱动与主题声明 -->
     <section class="powerby">
         {{ with .Site.Params.footer.customText }}
             {{ . | safeHTML }} <br/>
         {{ end }}
 
-        <span>使用 <b><a href="https://github.com/AlaskaChinese/AlaskaChinese.github.io" target="_blank" rel="noopener">Antigravity</a></b> 强力构建</span> · 
-        <span>基于 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="{{ $ThemeVersion }}">Stack</a></b> 主题</span>
+        <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="{{ $ThemeVersion }}">Stack</a></b></span>
     </section>
 </footer>

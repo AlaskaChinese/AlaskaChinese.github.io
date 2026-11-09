@@ -11,10 +11,6 @@ links:
     description: 全球最快、最强大的静态网站生成框架。
     website: https://gohugo.io/
     image: img/favicon.ico
-  - title: Antigravity
-    description: 现代智能软件架构与开发智能体。
-    website: https://github.com/AlaskaChinese/AlaskaChinese.github.io
-    image: img/favicon.ico
 menu:
     main: 
         weight: -50

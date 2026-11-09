@@ -2,15 +2,15 @@
 .SYNOPSIS
     AlaskaChinese Hugo 博客一键新建与发布脚本
 .DESCRIPTION
-    用于极速创建 Hugo 文章目录和 index.md 模板，支持一键提交推送至 GitHub 触发 Actions 自动构建上线。
+    用于极速创建 Hugo 文章目录和 index.md 模板，支持一键提交推送至 GitHub 触发自动构建上线。
 .EXAMPLE
-    .\new-post.ps1 -Title "新文章" -Slug "my-article" -Category "技术随笔" -Tags "Windows,技巧" -Push
+    .\new-post.ps1 -Title "新文章" -Slug "my-article" -Category "系统美化" -Tags "Windows,技巧" -Push
 #>
 
 param(
     [string]$Title,
     [string]$Slug,
-    [string]$Category = "技术随笔",
+    [string]$Category = "系统美化",
     [string]$Tags = "Windows,技巧",
     [string]$Description = "",
     [switch]$Push
@@ -77,11 +77,24 @@ tags: [$tagJoin]
     Write-Host "已创建文章：$postFile" -ForegroundColor Green
 }
 
-if ($Push -or ((Read-Host "是否现在提交并推送到 GitHub 触发自动构建? (y/n)") -eq 'y')) {
+if ($Push -or ((Read-Host "是否现在编译并推送到 GitHub? (y/n)") -eq 'y')) {
+    Write-Host "正在编译静态页面..." -ForegroundColor Cyan
+    $hugoPath = "$env:LOCALAPPDATA\Microsoft\WinGet\Packages\Hugo.Hugo.Extended_Microsoft.Winget.Source_8wekyb3d8bbwe\hugo.exe"
+    if (Test-Path $hugoPath) {
+        & $hugoPath -D
+    } else {
+        hugo -D
+    }
+
+    if (Test-Path "public") {
+        Copy-Item -Path "public\*" -Destination "." -Recurse -Force
+        Remove-Item -Path "public" -Recurse -Force
+    }
+
     git add .
     git commit -m "feat(post): publish $Title"
     git push origin main
-    Write-Host "🎉 已成功推送到 GitHub！GitHub Actions 将自动编译并部署上线。" -ForegroundColor Green
+    Write-Host "🎉 已成功推送到 GitHub！" -ForegroundColor Green
 } else {
     Write-Host "文章已在本地保存。编辑完毕后运行 git push origin main 即可上线。" -ForegroundColor Yellow
 }
