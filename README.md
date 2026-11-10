@@ -24,9 +24,9 @@ AlaskaChinese 的个人博客，基于 Hugo + Stack 主题定制构建。
 
 ---
 
-## 🚀 写作与发布流程
+## 🚀 写作与内容维护流程
 
-### 方法 1：使用本地一键脚本（推荐）
+### 1. 新建文章（使用一键脚本）
 
 在项目根目录下执行：
 
@@ -34,9 +34,11 @@ AlaskaChinese 的个人博客，基于 Hugo + Stack 主题定制构建。
 .\new-post.ps1 -Title "你的文章标题" -Slug "article-slug" -Category "系统美化" -Tags "Windows,技巧" -Push
 ```
 
-脚本将自动在 `content/post/article-slug/` 下生成标准 Frontmatter 的 `index.md` 模板，并在确认后自动提交推送到 GitHub，触发自动编译发布！
+脚本将自动在 `content/post/article-slug/` 下生成标准 Frontmatter 的 `index.md` 模板，并在确认后自动编译、同步根目录并推送到 GitHub 上线。
 
-### 方法 2：本地预览与创作
+---
+
+### 2. 本地实时预览（仅供写作调试）
 
 如需在本地实时预览编写效果：
 
@@ -45,6 +47,44 @@ hugo server -D
 ```
 
 打开浏览器访问 `http://localhost:1313/` 即可边写边实时预览。
+
+> 💡 **提示**：`hugo server` 是在本地内存中运行的预览服务器，**不会**把生成的文件写入磁盘，也不能直接用来提交上线。
+
+---
+
+### 3. 内容修改与发布流程（本地编译维护 - 方式 B）
+
+> ⚠️ **核心铁律**：**绝对不要手动修改任何 `.html` 文件！**  
+> 根目录及子目录下的所有 HTML 文件均为机器根据 Markdown 和模板自动编译的产物。手动修改不仅容易漏改，下次执行 Hugo 编译时也会被无情覆盖。**所有文字与内容修改，请一律只在 `content/` 下的 `.md` 源文件中进行。**
+
+当需要修改已有页面信息（例如修改关于页 `content/page/about/index.md`、修改历史文章、调整分类标签等）时，请按以下标准流程操作：
+
+#### 步骤 1：修改对应的 Markdown 源文件
+在编辑器中打开源文件进行修改并保存，例如：
+- 关于页面：`content/page/about/index.md`
+- 友链页面：`content/page/links/index.md`
+- 博客文章：`content/post/<文章目录>/index.md`
+
+#### 步骤 2：执行生产编译（编译到 public 目录）
+在 PowerShell 根目录下运行打包命令：
+```powershell
+hugo --minify
+```
+
+#### 步骤 3：将编译产物同步覆盖至仓库根目录
+将生成在 `public/` 目录里的所有更新文件递归覆盖至仓库根目录，并清理临时目录：
+```powershell
+Copy-Item -Path "public\*" -Destination ".\" -Recurse -Force
+Remove-Item -Path "public" -Recurse -Force
+```
+
+#### 步骤 4：提交并推送至 GitHub 上线
+```powershell
+git add -A
+git commit -m "docs: 更新页面信息并同步静态页面"
+git push origin main
+```
+推送成功后，刷新线上网页即可看到最新内容。
 
 ---
 
