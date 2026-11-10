@@ -1,5 +1,6 @@
 ---
 title: "留言"
+description: "AlaskaChinese's Blog 互动交流与留言板，支持使用 GitHub 账号登录留言交流、探讨技术或申请互换友链。"
 slug: "talk"
 date: 2026-11-09
 menu:

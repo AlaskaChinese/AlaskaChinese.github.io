@@ -1,5 +1,6 @@
 ---
 title: "友链"
+description: "AlaskaChinese's Blog 友情链接展示卡片与互换指南，连接优质开源项目与技术独立博客。"
 slug: "links"
 date: 2026-11-09
 links:

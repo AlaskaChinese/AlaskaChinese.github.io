@@ -31,6 +31,7 @@ params:
     - post
   rssFullContent: true
   favicon: img/favicon.ico
+  description: "AlaskaChinese 的个人技术博客，专注记录个人学习思考、Windows 系统美化技巧、PowerShell 脚本定制与技术成长分享。欢迎交流探讨！"
 
   footer:
     since: 2026
@@ -43,6 +44,7 @@ params:
   sidebar:
     compact: false
     emoji:
+    subtitle: 知是行之始，行是知之成
     subtitle1: 知是行之始
     subtitle2: 行是知之成
     avatar: img/avatar.png

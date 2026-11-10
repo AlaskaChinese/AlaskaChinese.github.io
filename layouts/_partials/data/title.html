@@ -1,0 +1,28 @@
+{{- $pageTitle := .Title -}}
+{{- $siteTitle := .Site.Title -}}
+{{- $paginator := partial "helper/paginator.html" . -}}
+
+{{- $title := slice -}}
+
+{{- if and $paginator $paginator.HasPrev -}}
+    <!-- Add page number-->
+    {{ $title = $title | append (printf "第 %d 页" $paginator.PageNumber) }}
+{{- end -}}
+
+{{- if .IsHome -}}
+    {{- if and $pageTitle (ne $pageTitle $siteTitle) (ne $pageTitle "首页") -}}
+        {{ $title = $title | append (printf "%s - %s" $pageTitle $siteTitle) }}
+    {{- else -}}
+        {{- $tagline := default "知是行之始，行是知之成" .Site.Params.sidebar.subtitle -}}
+        {{ $title = $title | append (printf "%s - %s" $siteTitle $tagline) }}
+    {{- end -}}
+{{- else -}}
+    {{- if and $pageTitle (ne $pageTitle $siteTitle) -}}
+        {{ $title = $title | append $pageTitle }}
+        {{ $title = $title | append $siteTitle }}
+    {{- else -}}
+        {{ $title = $title | append $siteTitle }}
+    {{- end -}}
+{{- end -}}
+
+{{ return delimit $title " - " }}

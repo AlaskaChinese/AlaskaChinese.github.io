@@ -1,5 +1,6 @@
 ---
 title: "关于"
+description: "关于 AlaskaChinese's Blog 博客作者与博客初心介绍，热衷于操作系统深度定制、效率工具探索与知识库建设。"
 slug: "about"
 date: 2026-11-09
 menu:

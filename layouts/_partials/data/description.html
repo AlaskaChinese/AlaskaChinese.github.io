@@ -1,0 +1,16 @@
+{{- $description := "" -}}
+
+{{- if .Description -}}
+    {{- $description = .Description -}}
+{{- else if and .IsPage .Summary -}}
+    {{- $description = .Summary -}}
+{{- else if .Data.Term -}}
+    {{- $description = printf "AlaskaChinese's Blog 中关于「%s」的相关技术分享、教程与归档列表。" .Data.Term -}}
+{{- else if .Site.Params.description -}}
+    {{- $description = .Site.Params.description -}}
+{{- else if .Site.Params.sidebar.subtitle -}}
+    {{- $description = .Site.Params.sidebar.subtitle -}}
+{{- end -}}
+
+{{- $cleanDesc := replaceRE "[\r\n\t]+" " " $description | plainify | strings.TrimSpace -}}
+{{- return $cleanDesc -}}
