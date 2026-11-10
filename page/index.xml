@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="/rss-style.xsl"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Pages on AlaskaChinese&#39;s Blog</title>
+        <link>https://alaskachinese.github.io/page/</link>
+        <description>Recent content in Pages on AlaskaChinese&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh</language>
+        <copyright>AlaskaChinese&#39;s Blog</copyright>
+        <lastBuildDate>Tue, 10 Nov 2026 09:25:28 +0800</lastBuildDate><atom:link href="https://alaskachinese.github.io/page/index.xml" rel="self" type="application/rss+xml" /><item>
+            <title>关于</title>
+            <link>https://alaskachinese.github.io/about/</link>
+            <pubDate>Mon, 09 Nov 2026 00:00:00 +0000</pubDate>
+            <guid>https://alaskachinese.github.io/about/</guid>
+            <description>&lt;h2 id=&#34;关于博主&#34;&gt;关于博主&#xA;&lt;/h2&gt;&lt;p&gt;你好！我是 &lt;strong&gt;AlaskaChinese&lt;/strong&gt;。&lt;/p&gt;&#xA;&lt;p&gt;热衷于计算机技术、操作系统深度定制、效率工具探索与个人知识库建设。&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;💻 &lt;strong&gt;个人主页&lt;/strong&gt;：&lt;a class=&#34;link&#34; href=&#34;https://github.com/AlaskaChinese&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;&#xA;    &gt;AlaskaChinese&amp;rsquo;s GitHub&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;📧 &lt;strong&gt;联系邮箱&lt;/strong&gt;：&lt;a class=&#34;link&#34; href=&#34;mailto:alaskachinese@foxmail.com&#34; &gt;alaskachinese@foxmail.com&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;🚀 &lt;strong&gt;博客平台&lt;/strong&gt;：基于 Hugo + &lt;code&gt;hugo-theme-stack&lt;/code&gt;，托管于 GitHub Pages。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;博客初心&#34;&gt;博客初心&#xA;&lt;/h2&gt;&#xA;    &lt;blockquote&gt;&#xA;        &lt;p&gt;&amp;ldquo;知是行之始，行是知之成。&amp;rdquo;&lt;/p&gt;&#xA;&#xA;    &lt;/blockquote&gt;&#xA;&lt;p&gt;本博客用于记录个人的学习思考、折腾踩坑经历与实用技术干货。如果这里的文字或脚本对你有所帮助，欢迎在留言板或文章底部使用 GitHub 账号留言交流！&lt;/p&gt;&#xA;</description>
+        </item><item>
+            <title>归档</title>
+            <link>https://alaskachinese.github.io/archives/</link>
+            <pubDate>Mon, 09 Nov 2026 00:00:00 +0000</pubDate>
+            <guid>https://alaskachinese.github.io/archives/</guid>
+            <description></description>
+        </item><item>
+            <title>留言</title>
+            <link>https://alaskachinese.github.io/talk/</link>
+            <pubDate>Mon, 09 Nov 2026 00:00:00 +0000</pubDate>
+            <guid>https://alaskachinese.github.io/talk/</guid>
+            <description>&#xA;    &lt;blockquote&gt;&#xA;        &lt;p&gt;&amp;ldquo;只有心灵相通的人，才有共鸣看人世间的潮起潮落；只有灵魂相近的人，才能看到彼此内心深藏的美丽。&amp;rdquo;&lt;/p&gt;&#xA;&#xA;    &lt;/blockquote&gt;&#xA;&lt;p&gt;欢迎使用 GitHub 账号登录并在下方留言交流、探讨技术或交换友链！亦可通过邮件联系博主：&lt;a class=&#34;link&#34; href=&#34;mailto:alaskachinese@foxmail.com&#34; &gt;alaskachinese@foxmail.com&lt;/a&gt;。&lt;/p&gt;&#xA;</description>
+        </item><item>
+            <title>友链</title>
+            <link>https://alaskachinese.github.io/links/</link>
+            <pubDate>Mon, 09 Nov 2026 00:00:00 +0000</pubDate>
+            <guid>https://alaskachinese.github.io/links/</guid>
+            <description>&#xA;    &lt;blockquote&gt;&#xA;        &lt;p&gt;&amp;ldquo;海内存知己，天涯若比邻。&amp;rdquo;&lt;/p&gt;&#xA;&#xA;    &lt;/blockquote&gt;&#xA;&lt;p&gt;欢迎在留言板留下你的博客链接进行互换友链！&lt;/p&gt;&#xA;</description>
+        </item><item>
+            <title>搜索</title>
+            <link>https://alaskachinese.github.io/search/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>https://alaskachinese.github.io/search/</guid>
+            <description></description>
+        </item></channel>
+</rss>

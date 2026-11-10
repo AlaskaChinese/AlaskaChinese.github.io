@@ -1,0 +1,43 @@
+backend:
+  name: github
+  repo: AlaskaChinese/AlaskaChinese.github.io
+  branch: main
+  # GitHub OAuth 代理地址（填入你的 Cloudflare Worker 地址后即可开启一键网页授权登录）
+  base_url: https://sveltia-cms-auth.alaskachinese.workers.dev
+
+# 站点信息
+site_url: https://alaskachinese.github.io
+display_url: https://alaskachinese.github.io
+logo_url: /img/avatar.png
+
+# 全局媒体存放目录（Decap/Sveltia CMS 必须声明）
+media_folder: "assets/img"
+public_folder: "/img"
+
+collections:
+  - name: "post"
+    label: "博客文章"
+    label_singular: "文章"
+    folder: "content/post"
+    create: true
+    # Hugo Page Bundle 规范：每个文章是一个独立目录，内部有 index.md
+    path: "{{slug}}/index"
+    # 上传的配图保存在文章当前目录下，方便引用
+    media_folder: ""
+    public_folder: ""
+    slug: "{{slug}}"
+    summary: "{{title}} ({{date | date('YYYY-MM-DD')}})"
+    sortable_fields: ["date", "title", "commit_date"]
+    view_filters:
+      - label: "系统美化"
+        field: "categories"
+        pattern: "系统美化"
+    fields:
+      - { label: "文章标题", name: "title", widget: "string", required: true }
+      - { label: "文章简介 (Description)", name: "description", widget: "text", required: false }
+      - { label: "发布时间", name: "date", widget: "datetime", format: "YYYY-MM-DDTHH:mm:ssZ", date_format: "YYYY-MM-DD", time_format: "HH:mm:ss", required: true }
+      - { label: "永久链接 Slug (英文/连字符)", name: "slug", widget: "string", required: true, hint: "例如：my-new-post" }
+      - { label: "封面展示图", name: "image", widget: "image", required: false, choose_url: false }
+      - { label: "分类 (Categories)", name: "categories", widget: "list", default: ["系统美化"], required: false }
+      - { label: "标签 (Tags)", name: "tags", widget: "list", default: ["技巧教程"], required: false }
+      - { label: "正文内容", name: "body", widget: "markdown", required: true }
